@@ -101,7 +101,17 @@ cd Shared
 cd MRS_Toolchain_MAC_V*/
 
 # gcc8
-mv xpack-riscv-none-embed-gcc-8*.zip riscv-none-embed-gcc-8-mac-${var}.zip
+cp ${basedir}/file/riscv-none-embed-gcc-8-linux* .
+unzip riscv-none-embed-gcc-8-linux*.zip
+unzip xpack-riscv-none-*-8*.zip
+rm -rfv riscv-none-embed-gcc-8-linux*.zip
+rm -rfv xpack-riscv-none-*-8*.zip
+
+find ./riscv-none-*-8-*/riscv-none-*/lib/ -type f | grep -v -E 'libprintf' | xargs rm -rfv
+find ./riscv-none-*-8-*/riscv-none-*/lib/ -type d -empty -delete
+cp -rfvp ./riscv-none-*-8-*/riscv-none-*/lib/* xpack-riscv-none-embed-gcc*/riscv-none-*/lib/
+mv xpack-riscv-none-embed-gcc-8*/ riscv-none-embed-gcc-8-mac-${var}
+zip -r riscv-none-embed-gcc-8-mac-${var}.zip riscv-none-embed-gcc-8-mac-${var}/
 
 # gcc12
 mv xpack-riscv-none-elf-gcc-12*.zip riscv-none-embed-gcc-12-mac-${var}.zip
