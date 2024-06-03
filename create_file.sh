@@ -31,8 +31,8 @@ mv "RISC-V Embedded GCC" riscv-none-embed-gcc-8-win-${var}
 zip -r riscv-none-embed-gcc-8-win-${var}.zip riscv-none-embed-gcc-8-win-${var}
 
 # gcc12
-mv "RISC-V Embedded GCC12" riscv-none-embed-gcc-12-win-${var}
-zip -r riscv-none-embed-gcc-12-win-${var}.zip riscv-none-embed-gcc-12-win-${var}
+mv "RISC-V Embedded GCC12" riscv-none-elf-gcc-12-win-${var}
+zip -r riscv-none-elf-gcc-12-win-${var}.zip riscv-none-elf-gcc-12-win-${var}
 
 mv *.zip ${basedir}/file
 
@@ -61,8 +61,8 @@ mv RISC-V_Embedded_GCC riscv-none-embed-gcc-8-linux-${var}
 zip -r riscv-none-embed-gcc-8-linux-${var}.zip riscv-none-embed-gcc-8-linux-${var}
 
 # gcc12
-mv RISC-V_Embedded_GCC12 riscv-none-embed-gcc-12-linux-${var}
-zip -r riscv-none-embed-gcc-12-linux-${var}.zip riscv-none-embed-gcc-12-linux-${var}
+mv RISC-V_Embedded_GCC12 riscv-none-elf-gcc-12-linux-${var}
+zip -r riscv-none-elf-gcc-12-linux-${var}.zip riscv-none-elf-gcc-12-linux-${var}
 
 mv *.zip ${basedir}/file
 
@@ -114,7 +114,7 @@ mv xpack-riscv-none-embed-gcc-8*/ riscv-none-embed-gcc-8-mac-${var}
 zip -r riscv-none-embed-gcc-8-mac-${var}.zip riscv-none-embed-gcc-8-mac-${var}/
 
 # gcc12
-mv xpack-riscv-none-elf-gcc-12*.zip riscv-none-embed-gcc-12-mac-${var}.zip
+mv xpack-riscv-none-elf-gcc-12*.zip riscv-none-elf-gcc-12-mac-${var}.zip
 
 mv *.zip ${basedir}/file
 
