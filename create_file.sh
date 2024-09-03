@@ -1,6 +1,6 @@
 #!/bin/bash
 
-var=1.91
+var=1.92
 
 basedir=$(cd $(dirname $0); pwd)
 cd $basedir
@@ -81,14 +81,22 @@ cd MRS_Toolchain_Mac/
 mkdir beforeinstall-mac-${var}
 touch beforeinstall-mac-${var}/dummy.txt
 zip -r beforeinstall-mac-${var}.zip beforeinstall-mac-${var}
+mv *.zip ${basedir}/file
 
 # OpenOCD
+cd MRS_Toolchain_MAC_V*
+cd openocd_arm64
 mv openocd_arm64 openocd-mac-arm64-${var}
-zip -r openocd-mac-arm64-${var}.zip openocd-mac-arm64-${var}
+zip -r ../openocd-mac-arm64-${var}.zip openocd-mac-arm64-${var}
+cd ..
+cd openocd_x86_64
 mv openocd_x86_64 openocd-mac-x86_64-${var}
-zip -r openocd-mac-x86_64-${var}.zip openocd-mac-x86_64-${var}
+zip -r ../openocd-mac-x86_64-${var}.zip openocd-mac-x86_64-${var}
+cd ..
 
 mv *.zip ${basedir}/file
+cd ..
+rm -rfv MRS_Toolchain_MAC_V*/
 
 ## MRS_Toolchain_MAC_V*.pkg
 
